@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden; /* Prevents horizontal overflow on small screens */
+}
+
+/* Styles for Landing Page */
+.landing {
+    background-image: url('../image/background.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.content {
+    z-index: 5; /* Ensure content is on top */
+    text-align: center; /* Center the text */
+}
+
+.content h1 {
+
+    font-size: 5rem; /* Adjust font size */
+    color: white;
+    margin-bottom: 20px; /* Space below the title */
+    margin-top: 30px;
+}
+
+/* Button Styles */
+.buttons {
+    margin-top: 10px; /* Reduced space above buttons */
+}
+
+.buttons .btn {
+    background: linear-gradient(135deg, #7b3f00, #964b00); /* Original button color */
+    color: white; /* Ensure text color is white */
+    padding: 12px 24px; /* Button padding */
+    margin: 5px; /* Space between buttons */
+    text-decoration: none;
+    font-size: 1.2rem; /* Button font size */
+    font-family: 'Montserrat', sans-serif; /* Montserrat for buttons */
+    font-weight: bold;
+    border: none; /* Remove default border */
+    border-radius: 30px; /* Rounded buttons */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.buttons .btn:hover {
+    background: linear-gradient(135deg, #b87333, #d49a6a); /* Lightened gradient on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+}
+
+.buttons .btn:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.5); /* Highlight outline */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 2.5rem; /* Smaller text for mobile */
+    }
+
+    .buttons .btn {
+        padding: 10px 20px; /* Adjust button size for mobile */
+        font-size: 1rem; /* Smaller button font size */
+    }
+}
+
+/* Extra Responsive for Very Small Screens */
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 2rem; /* Smaller text for very small screens */
+    }
+
+    .buttons .btn {
+        padding: 8px 15px; /* Smaller button size */
+        font-size: 0.9rem; /* Smaller button font size */
+    }
+}

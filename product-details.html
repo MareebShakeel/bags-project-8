@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="css/productdetails.css">
+</head>
+<body>
+
+<a href="home.html" class="back-button">← Back to Products</a>
+
+<!-- Product Details Page -->
+<section class="product-details">
+    <h2 id="product-title">Product Title</h2>
+    <div class="product-details-wrapper">
+        <div class="product-image">
+            <img id="product-image" src="image/image2-all.jpg" alt="Product Image">
+        </div>
+        <div class="product-info">
+            <p id="product-price" class="price">Price: $99.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+            <p id="product-description" class="description">This is a detailed description of the product. It includes features, materials, and other relevant information.</p>
+            <div class="reviews">
+                <h4>Customer Reviews</h4>
+                <p id="product-reviews">★★★★☆</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Get the product ID from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+    
+    // You can now use the product ID to load specific product data from a database or a predefined list of products.
+    // Example data (you can replace this with real data or fetch it dynamically)
+    const products = [
+        {id: 1, title: "Product 1", price: "$99.99", description: "Detailed description for Product 1", image: "image/image2-all.jpg", reviews: "★★★★☆"},
+        {id: 2, title: "Product 2", price: "$120.00", description: "Detailed description for Product 2", image: "image/image-all.jpg", reviews: "★★★☆☆"},
+        {id: 3, title: "Product 3", price: "$79.99", description: "Detailed description for Product 3", image: "image/image7.jpg", reviews: "★★★★★"},
+        { id:4, title: "Product 4", price: "$79.99", description: "Detailed description of Product 4", image: "image/image17.png", reviews: "★★★★☆"},
+        { id:5, title: "Product 5", price: "$40", description: "Detailed description of Product 5", image: "image/image6.png", reviews: "★★★★☆"},
+        { id:6, title: "Product 6", price: "$99.99", description: "Detailed description of Product 6", image: "image/image2-all.jpg", reviews: "★★★★☆"},
+        { id:7, title: "Product 7", price: "$120.00", description: "Detailed description of Product 7", image: "image/image-all.jpg", reviews: "★★★★☆"}, 
+        { id:8, title: "Product 8", price: "$79.99", description: "Detailed description of Product 8", image: "image/image7.jpg", reviews: "★★★★☆"},
+        { id:9, title: "Product 9", price: "$40", description: "Detailed description of Product 9", image: "image/image6.png", reviews: "★★★★☆"},
+        { id:10, title: "Product 10", price: "$39.99", description: "Detailed description of Product 10", image: "image/image3.jpg", reviews: "★★★★☆"},
+        { id:11, title: "Product 11", price: "$35", description: "Detailed description of Product 11", image: "image/image19.webp", reviews: "★★★★☆"},
+        { id:12, title: "Product 12", price: "$40", description: "Detailed description of Product 12", image: "image/image4.jpg", reviews: "★★★★☆"},
+        { id:13, title: "Product 13", price: "$30", description: "Detailed description of Product 13", image: "image/image5.jpg", reviews: "★★★★☆"},
+        { id:14, title: "Product 14", price: "$29.99", description: "Detailed description of Product 14", image: "image/image20.jpg", reviews: "★★★★☆"},
+        { id:15, title: "Product 15", price: "$79.99", description: "Detailed description of Product 15", image: "image/image17.png", reviews: "★★★★☆"},
+       
+];
+        
+    // Find the product based on the productId
+    const product = products.find(p => p.id == productId);
+    
+    if (product) {
+        // Set the product details dynamically
+        document.getElementById("product-title").textContent = product.title;
+        document.getElementById("product-price").textContent = "Price: " + product.price;
+        document.getElementById("product-description").textContent = product.description;
+        document.getElementById("product-image").src = product.image;
+        document.getElementById("product-reviews").textContent = product.reviews;
+    } else {
+        // Handle case if product is not found
+        document.querySelector(".product-details").innerHTML = "<p>Product not found</p>";
+    }
+</script>
+
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,76 @@
+/* Styles for Login Page */
+/* General body styles */
+body {
+    margin: 0;
+    background-size: cover;
+    color: black;
+    background-image: url('../image/background.jpg'); /* background image */
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* Login container styles */
+#login-page {
+    display: flex; /* Center the container */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.9); /* Light background for the form */
+    padding: 35px; 
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px; 
+    z-index: 0; /* Ensure form is above the background */    
+}
+
+.login-container h2 {
+    margin-bottom: 10px; /* Space below the header */
+    color: #8b4513; /* Dark brown color for the heading */
+    font-size: 2.2rem; /* Font size for the heading */
+    text-align: center;
+}
+
+/* Input and Select Styles */
+.login-container input {
+    width: 100%; 
+    padding: 8px; 
+    margin: 9px 0; /* Space between inputs */
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size for inputs */
+}
+
+/* Button Styles */
+.login-container button {
+    background-color: #8b4513;
+    color: white; /* Text color */
+    padding: 12px; 
+    border: none;
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    width: 100%; /* Full width of the button */
+    font-size: 1.2rem; /* Font size for the button */
+}
+
+/* Hover effects for buttons */
+.login-container button:hover {
+    background: linear-gradient(135deg, #b8860b, #deb887); /* Gradient on hover */
+}
+
+/* Style for the link to signup */
+.login-container p {
+    margin-top: 20px; /* Space above the paragraph */
+}
+
+.login-container a {
+    color: #8b4513; /* Dark brown color for the link */
+    text-decoration: none; /* No underline */
+}
+
+.login-container a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
